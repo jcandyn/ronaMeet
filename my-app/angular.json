@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         }
       },
       "root": "",
@@ -26,9 +26,6 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
-            ],
-            "styles": [
-              "src/styles.sass"
             ],
             "scripts": []
           },
@@ -91,9 +88,6 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.sass"
-            ],
             "scripts": []
           }
         },
@@ -121,6 +115,10 @@
               "devServerTarget": "my-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
@@ -128,5 +126,11 @@
   "defaultProject": "my-app",
   "cli": {
     "analytics": "89e0eeba-dea4-4771-9c90-3af2fb1cbb86"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss",
+      "style": "scss"
+    }
   }
 }

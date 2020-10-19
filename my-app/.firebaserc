@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ronameet-f32c5": {
+      "hosting": {
+        "my-app": [
+          "ronameet-f32c5"
+        ]
+      }
+    }
+  }
+}

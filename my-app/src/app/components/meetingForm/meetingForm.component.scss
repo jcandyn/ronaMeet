@@ -10,14 +10,10 @@
 	color: red ;
 }
 
-body {
-	padding-bottom: 20rem;
+#formContainer {
+	margin: 10px;
 }
 
-#loginDiv {
-	background-color: #e3f2fd;
-	padding: 10rem;
-}
 
 @import url('https://fonts.googleapis.com/css?family=Rubik:700&display=swap');
 
@@ -36,17 +32,6 @@ $pink-shadow: #ffe3e2;
   }
 }
 
-body {
-  font-family: 'Rubik', sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  min-height: 100vh;
-  background: $bg;
-}
 
 .learn-more {
   position: relative;
@@ -102,16 +87,7 @@ body {
   }
 }
 
-#fbIcon {
-	height: 1.5rem;
-	padding-right: 20px;
-}
 
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-	 #loginDiv {
-		background-color: #e3f2fd;
-		padding: 0rem;
-	}
-}
-
+// ::ng-deep #formContainer{
+// 	width:400px !important;
+//   }

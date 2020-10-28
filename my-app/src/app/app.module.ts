@@ -17,26 +17,49 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { JumbotronComponent } from './components/jumbotron/jumbotron.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MeetingFormComponent } from './components/meetingForm/meetingForm.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+/* Material Design */
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    NavbarComponent,
     UserComponent,
     RegisterComponent,
     JumbotronComponent,
-    // FontAwesomeModule,
+    MeetingFormComponent,
+    // MatDatepickerModule,
+    // MatNativeDateModule 
+
   ],
   imports: [
     BrowserModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatFormFieldModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    MatDatepickerModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule // imports firebase/auth, only needed for auth features
+    AngularFireAuthModule,
+    FontAwesomeModule, 
+    BrowserAnimationsModule // imports firebase/auth, only needed for auth features
   ],
-  providers: [AuthService, UserService, UserResolver, AuthGuard],
+  exports : [
+    // MatDatepickerModule,
+    // MatNativeDateModule
+  ],
+  providers: [AuthService, UserService, UserResolver, AuthGuard, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { };

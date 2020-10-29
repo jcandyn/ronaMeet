@@ -5,12 +5,15 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseUserModel } from '../../core/user.model';
+// import {MeetingFormComponent} from '../../components/meetingForm/meetingForm.component'
 
 @Component({
   selector: 'page-user',
   templateUrl: 'user.component.html',
   styleUrls: ['user.component.scss']
 })
+
+
 export class UserComponent implements OnInit{
 
   user: FirebaseUserModel = new FirebaseUserModel();

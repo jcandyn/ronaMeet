@@ -1,0 +1,33 @@
+<div id="formContainer" class="container">
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  
+
+
+  <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+    <mat-label>Name of Event</mat-label>
+    <input formControlName="name" id="nameInput"matInput #input maxlength="50" placeholder="Ex. Nougat">
+    <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Link</mat-label>
+    <input formControlName="link" matInput>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input formControlName="date" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <br>
+  <button class="learn-more" type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+</form>
+
+</div>

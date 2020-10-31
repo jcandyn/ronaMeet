@@ -26,6 +26,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 
+import { LoginServices } from "../app/services/auth/login.service";
+
 
 @NgModule({
   declarations: [
@@ -59,7 +61,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     // MatDatepickerModule,
     // MatNativeDateModule
   ],
-  providers: [AuthService, UserService, UserResolver, AuthGuard, ],
+  providers: [AuthService, UserService, UserResolver, AuthGuard,LoginServices ],
   bootstrap: [AppComponent]
 })
 export class AppModule { };

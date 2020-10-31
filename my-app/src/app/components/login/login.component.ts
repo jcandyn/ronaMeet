@@ -3,6 +3,8 @@ import { AuthService } from '../../core/auth.service'
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { LoginServices } from "../../services/auth/login.service";
 
 @Component({
   selector: 'page-login',
@@ -17,7 +19,8 @@ faUser = faUser;
   constructor(
     public authService: AuthService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private loginServices:LoginServices
   ) {
     this.createForm();
   }
@@ -43,10 +46,18 @@ faUser = faUser;
     })
   }
 
+  
   tryGoogleLogin(){
     this.authService.doGoogleLogin()
     .then(res => {
       this.router.navigate(['/user']);
+      console.log(res);
+      this.loginServices.createCoffeeOrder(res.user)
+      .then(res => {
+        console.log("I got it! :" + res)
+          /*do something here....
+          maybe clear the form or give a success message*/
+      });
     })
   }
 

@@ -20,6 +20,8 @@ export class AuthService {
     this.user.next(this.afAuth.authState);
   }
 
+  
+
   loginViaGoogle(): Observable<auth.UserCredential> {
     return from(this.afAuth.signInWithPopup(new auth.GoogleAuthProvider()));
   }

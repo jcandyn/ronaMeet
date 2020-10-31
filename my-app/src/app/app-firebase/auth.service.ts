@@ -20,7 +20,8 @@ export class AuthService {
   }
 
   loginViaGoogle(): Observable<auth.UserCredential> {
-    return from(this.afAuth.signInWithPopup(new auth.GoogleAuthProvider()));
+    return from(this.afAuth.signInWithPopup(new auth.GoogleAuthProvider()
+    ));
   }
 
   logout(): Observable<void> {
